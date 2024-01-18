@@ -1,0 +1,212 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+header {
+    
+    background-color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+nav ul li {
+    list-style-type: none;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+    transition: transform 0.3s ease-in-out; /* Add transition for smooth appearance */
+    list-style-type: none;
+}
+
+.navbar.hidden {
+    transform: translateY(-100%); /* Move the navbar off-screen */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    list-style-type: none;
+}
+
+.navbar a:hover {
+    background-color: white !important;
+}
+
+
+.video-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#section1Video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -1; /* Place the video behind other content */
+    object-fit: cover;
+}
+
+
+
+section {
+    height: 500px; /* Adjust the height as needed */
+    text-align: center;
+    padding-top: 50px;
+}
+footer {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+
+.content-section {
+    padding: 80px 0; /* Adjust the padding as needed */
+    background-color: #f9f9f9; /* Set a background color for Section 2 */
+    color: #333; /* Set text color for Section 2 */
+}
+
+.content-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.text {
+    flex: 1;
+    padding: 20px;
+}
+
+.text h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.image {
+    flex: 1;
+    text-align: center;
+    margin-top: 20px; /* Add margin to separate text and image */
+}
+
+.image img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+.image-section {
+    text-align: center;
+    padding: 80px 0;  /*Adjust the padding as needed */
+    /* background-color: #333;  Set a background color for Section 3 */
+}
+
+.image-section img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+
+.cursor {
+    width: 20px;
+    height: 20px;
+    background-color: darkred;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: background-color 0.1s;
+}
+
+.cursor.active {
+    background-color: lightyellow   ;
+}
+
+
+#section1 {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Mobile Navigation */
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 2;
+}
+
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar.active {
+        transform: translateY(0); /* Bring the navbar back on-screen */
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+     .content-container {
+        flex-direction: column;
+    }
+
+    .text,
+    .image {
+        flex: 100%;
+        text-align: center;
+    }
+}
